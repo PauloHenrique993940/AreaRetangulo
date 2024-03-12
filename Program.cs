@@ -6,32 +6,42 @@ namespace AreaRetangulo
     {
         static void Main(string[] args)
         {
-            //Programa Estrutural 
-            // Obtendo dados da largura 
+            double largura, altura;
+
             Console.WriteLine("Digite a largura do Retângulo: ");
-            double largura = double.Parse(Console.ReadLine());
+            largura = double.Parse(Console.ReadLine());
 
-            // Obtendo dados da altura
             Console.WriteLine("Digite a altura do Retângulo: ");
-            double altura = double.Parse(Console.ReadLine());
+            altura = double.Parse(Console.ReadLine());
 
-            // Calculando área do Retângulo
-            double area = largura * altura;
+            double area = CalculoAreaRetangulo(largura, altura);
+            double perimetro = CalcularPerimetro(largura, altura);
+            double diagonal = CalculoDiagonal(largura, altura);
 
-            // Calculando o perímetro
-            double perimetro = 2 * (largura + altura);
+            Console.WriteLine("A área do retângulo é: {0:F2}", area);
+            Console.WriteLine("O perímetro do retângulo é: {0:F2}", perimetro);
+            Console.WriteLine("A diagonal do retângulo é: {0:F2}", diagonal);
 
-            // Calculando a diagonal do retangulo
-            double diagonal = Math.Sqrt((largura * largura) + (altura * altura));
-
-            // Exibindo os resultados
-            Console.WriteLine("A área do retângulo é: " + area);
-            Console.WriteLine("O perímetro do retângulo é: " + perimetro);
-            Console.WriteLine("A diagonal do retângulo é: " + diagonal);
-
-            
             Console.ReadLine();
+        }
 
+        // Calcula a área do retângulo
+        public static double CalculoAreaRetangulo(double largura, double altura)
+        {
+            return largura * altura;
+        }
+
+        // Calcula o perímetro do retângulo
+        public static double CalcularPerimetro(double largura, double altura)
+        {
+            return 2 * (largura + altura);
+        }
+
+        // Calcula a diagonal do retângulo
+        public static double CalculoDiagonal(double largura, double altura)
+        {
+            return Math.Sqrt((largura * largura) + (altura * altura));
         }
     }
 }
+
